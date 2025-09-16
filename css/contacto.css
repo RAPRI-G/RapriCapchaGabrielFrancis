@@ -1,0 +1,189 @@
+/* ==== GENERAL ==== */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #000;
+  color: #fff;
+}
+
+/* ==== NAVBAR ==== */
+.navbar {
+  background: #111;
+  padding: 15px;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar ul li {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+.navbar ul li a {
+  color: #bbb;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.navbar ul li a:hover,
+.navbar ul li a.active {
+  color: #8e2de2;
+}
+
+/* ==== CONTENEDOR UNIFICADO ==== */
+.contacto-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 40px 40px;
+  min-height: 100vh;
+}
+
+.contacto-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1000px;
+  width: 100%;
+  background: #111;
+  border-radius: 25px;
+  box-shadow: 0 0 35px rgba(142,45,226,0.6);
+  overflow: hidden;
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+}
+
+/* ==== SECCIÓN FORMULARIO ==== */
+.form-section {
+  flex: 2;
+  padding: 40px;
+}
+
+.form-section h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  background: linear-gradient(90deg,#00d9ff,#8e2de2);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textGradient 6s linear infinite;
+}
+
+.form-section label {
+  display: block;
+  margin-top: 15px;
+  font-weight: 600;
+  color: #ddd;
+}
+
+.form-section input,
+.form-section textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  border-radius: 10px;
+  border: 1px solid #333;
+  background: #000;
+  color: #fff;
+  font-size: 16px;
+}
+
+.form-section textarea {
+  height: 120px;
+  resize: none;
+}
+
+.form-section .btn {
+  margin-top: 20px;
+  width: 100%;
+  background: linear-gradient(135deg,#4a00e0,#8e2de2);
+  color: #fff;
+  font-weight: 600;
+  padding: 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.form-section .btn::before {
+  content:"";
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:100%;
+  height:100%;
+  background: rgba(255,255,255,0.2);
+  transform: skewX(-25deg);
+}
+
+.form-section .btn:hover::before { left:100%; transition:left 0.7s ease; }
+.form-section .btn:hover { transform: translateY(-3px); box-shadow:0 0 20px rgba(142,45,226,0.8); }
+
+#respuesta { margin-top:15px; text-align:center; font-weight:600; animation:fadeIn 0.5s ease; }
+
+/* ==== SECCIÓN INFO ==== */
+.info-section {
+  flex: 1;
+  padding: 40px;
+  background: #111;
+  border-left: 1px solid rgba(142,45,226,0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.info-section h2 { text-align:center; color:#00d9ff; margin-bottom:20px; }
+
+.info-item {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:15px 0;
+  color:#ddd;
+  font-size:16px;
+  animation: fadeIn 1s ease forwards;
+}
+
+.info-item i { color:#8e2de2; }
+
+.social-icons {
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  margin-top:20px;
+}
+
+.social-icons a {
+  color:#fff;
+  font-size:22px;
+  transition: all 0.3s ease;
+  position:relative;
+}
+
+.social-icons a:hover { color:#8e2de2; transform: scale(1.3); }
+
+/* ==== ANIMACIONES ==== */
+@keyframes fadeInUp { from{ transform:translateY(40px); opacity:0;} to{ transform:translateY(0); opacity:1; } }
+@keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
+@keyframes textGradient { 0%{background-position:0% center;} 100%{background-position:200% center;} }
+
+/* ==== RESPONSIVO ==== */
+@media (max-width:900px){
+  .contacto-card { flex-direction: column; border-left:none; }
+  .info-section { border-left:none; border-top:1px solid rgba(142,45,226,0.4); padding-top:30px; }
+}

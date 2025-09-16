@@ -1,0 +1,133 @@
+/* ==== GENERAL ==== */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #000;
+  color: #fff;
+}
+
+.navbar {
+  background: #111;
+  padding: 15px;
+  text-align: center;
+  position: fixed;
+  top:0;
+  width:100%;
+  z-index:1000;
+  box-shadow:0 4px 10px rgba(0,0,0,0.5);
+}
+
+.navbar ul { list-style:none; margin:0; padding:0; }
+.navbar ul li { display:inline-block; margin:0 15px; }
+.navbar ul li a { color:#bbb; text-decoration:none; font-weight:bold; transition:0.3s; }
+.navbar ul li a:hover, .navbar ul li a.active { color:#8e2de2; }
+
+/* ==== PANEL ADMIN ==== */
+.admin-container {
+  display:flex;
+  justify-content:center;
+  padding:150px 20px 50px;
+  min-height:100vh;
+}
+
+.admin-card {
+  max-width:1000px;
+  width:100%;
+  background:#111;
+  padding:40px;
+  border-radius:25px;
+  box-shadow:0 0 35px rgba(142,45,226,0.6);
+}
+
+.admin-card h1 {
+  text-align:center;
+  font-size:28px;
+  font-weight:700;
+  margin-bottom:30px;
+  background: linear-gradient(90deg,#4a00e0,#8e2de2);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-size:200% auto;
+  animation: textGradient 6s linear infinite;
+}
+
+/* ==== UPLOAD FORM ==== */
+.upload-section {
+  margin-bottom:40px;
+}
+
+.upload-section h2 {
+  margin-bottom:15px;
+  color:#8e2de2;
+}
+
+.upload-section input[type="text"],
+.upload-section input[type="file"] {
+  width:100%;
+  padding:12px;
+  margin-bottom:15px;
+  border-radius:10px;
+  border:1px solid #333;
+  background:#000;
+  color:#fff;
+}
+
+.upload-section .btn {
+  width:100%;
+  padding:14px;
+  font-weight:600;
+  border-radius:10px;
+  background: linear-gradient(135deg,#4a00e0,#8e2de2);
+  color:#fff;
+  cursor:pointer;
+  position:relative;
+  overflow:hidden;
+  transition:0.3s;
+}
+
+.upload-section .btn::before {
+  content:"";
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:100%;
+  height:100%;
+  background: rgba(255,255,255,0.2);
+  transform: skewX(-25deg);
+}
+.upload-section .btn:hover::before { left:100%; transition:left 0.7s ease; }
+.upload-section .btn:hover { transform: translateY(-3px); box-shadow:0 0 20px rgba(142,45,226,0.8); }
+
+/* ==== LISTA DE PDFs ==== */
+.pdf-list-section h2 { color:#8e2de2; margin-bottom:15px; }
+
+#pdfTable {
+  width:100%;
+  border-collapse:collapse;
+}
+
+#pdfTable th, #pdfTable td {
+  padding:12px;
+  border-bottom:1px solid #333;
+  text-align:left;
+}
+
+#pdfTable th { color:#8e2de2; }
+
+.action-btn {
+  margin-right:5px;
+  padding:6px 12px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.edit-btn { background:#00d9ff; color:#000; }
+.delete-btn { background:#ff2e2e; color:#fff; }
+
+.action-btn:hover { transform: scale(1.1); }
+
+/* ==== ANIMACIONES ==== */
+@keyframes textGradient { 0%{background-position:0% center;} 100%{background-position:200% center;} }
